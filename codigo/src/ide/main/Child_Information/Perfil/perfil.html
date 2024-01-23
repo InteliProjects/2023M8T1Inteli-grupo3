@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Consultas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../tarefas.css" />
+    <link rel="stylesheet" href="./Modal Edit/modal-edit.css" />
+  </head>
+  <body>
+    <header>
+      <div class="user-icon">
+        <i class="fa-solid fa-circle-user"></i>
+      </div>
+    </header>
+    <main>
+      <div id="menu-lateral">
+        <div id="dados-usario-menu">
+          <div id="image-profile">
+            <input type="file" name="" id="file" accept="image/jpeg, image/png">
+            <svg id="placeholder-img" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+            </svg>
+            <svg id="trash" onclick="deleteImg()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+              <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+          </svg>
+          </div>
+          <p id="top-name"></p>
+        </div>
+        <div id="btn-tarefas" class="btn-menu">
+          <a href="../tarefas.html"
+            ><i class="fa-solid fa-list-check"></i
+            ><span onclick="redirectToTasks()">&nbsp;&nbsp;Tarefas</span></a
+          >
+        </div>
+        <div id="btn-perfil" class="btn-menu active">
+          <a href="perfil.html" 
+            ><i class="fa-regular fa-circle-user"></i
+            ><span onclick="redirectToProfile()">&nbsp;&nbsp;Perfil</span></a
+          >
+        </div>
+        <div id="btn-desempenho" class="btn-menu">
+          <a href="../../Home/home.html"
+            ><i class="fa-solid fa-house"></i>
+            <span>&nbsp;&nbsp;Voltar</span></a
+          >
+        </div>
+      </div>
+      <div id="conteudo">
+        <div id="inputs">
+          <div class="line">
+            <label for="">Nome:</label>
+            <p id="name"></p>
+          </div>
+          <div class="line">
+            <label for="">Idade:</label>
+            <p id="age"></p>
+          </div>
+          <div class="line">
+            <label for="">Grau:</label>
+            <p id="degree"></p>
+          </div>
+          <div class="line">
+            <label for="">Tipo de deficiência:</label>
+            <p id="deficiency-type"></p>
+          </div>
+          <div class="line">
+            <label for="">Primeira consulta:</label>
+            <p id="first-appointment"></p>
+          </div>
+          <div class="line">
+            <label for="">Última consulta:</label>
+            <p id="last-appointment"></p>
+          </div>
+          <div class="line">
+            <label for="">Gostos:</label>
+            <p id="hobbies"></p>
+          </div>
+          <div class="line">
+            <label for="">História:</label>
+            <p id="background"></p>
+          </div>
+        </div>
+        <div id="botoes">
+          <div id="btn-excluir" class="btn-acao" onclick="deletePatient()">Excluir</div>
+          <div id="btn-editar" class="btn-acao" onclick="openModal()">Editar</div>
+        </div>
+      </div>
+
+      <div id="modal-overlay">
+        <div id="modal">
+            <div id="feedback"></div>
+            <div id="top">
+                <button id="back-arrow" onclick="closeModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                </button>
+                <p id="patient-register"> Atualização de dados do paciente </p>
+            </div>
+            <div id="data">
+                <div class="row-data">
+                    <div class="info">
+                        <p> Nome completo <strong> * </strong></p>
+                        <input type="text" class="write-info" name="" id="name-inputs">
+                        <div class="alert-error" id="alert-name-error">
+                            <p class="didnt-write" id="name-error"> Preencha o campo acima </p>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <p> Idade <strong> * </strong></p>
+                        <input type="number" class="write-info" name="" id="age-inputs">
+                        <div class="alert-error" id="alert-age-error">
+                            <p  class="didnt-write" id="age-error"> Preencha o campo acima </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-data">
+                    <div class="info">
+                        <p> Tipo de deficiência </p>
+                        <input type="text" class="write-info" name="" id="deficiency-inputs">
+                        <div class="alert-error" id="alert-deficiency-error">
+                            <p class="didnt-write" id="deficiency-error"> Preencha o campo acima </p>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <p> Grau de deficiência <strong> * </strong></p>
+                        <input type="number" class="write-info" name="" id="degree-inputs">
+                        <div class="alert-error" id="alert-degree-error">
+                            <p  class="didnt-write" id="degree-error"> Preencha o campo acima </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-data">
+                  <div class="info">
+                      <p> Primeira consulta  <strong> * </strong></p>
+                      <input type="text" class="write-info" name="" id="first-appointment-inputs" placeholder="DD/MM/AAAA">
+                      <div class="alert-error" id="alert-first-appointment-error">
+                          <p class="didnt-write" id="first-appointment-error"> </p>
+                      </div>
+                  </div>
+                  <div class="info">
+                      <p> Última consulta </p>
+                      <input type="text" class="write-info" name="" id="last-appointment-inputs" placeholder="DD/MM/AAAA">
+                      <div class="alert-error" id="alert-last-appointment-error">
+                          <p class="didnt-write" id="last-appointment-error"> </p>
+                      </div>
+                  </div>
+                </div>
+                <div class="info">
+                    <p> Interesses </p>
+                    <textarea class="write-info" rows="3" cols="50" id="hobbies-inputs"></textarea>
+                    <div class="alert-error" id="alert-hobbies-error">
+                        <p class="didnt-write" id="hobbies-error"> Preencha o campo acima </p>
+                    </div>
+                </div>
+                <div class="info">
+                    <p> História <strong> * </strong> </p>
+                    <textarea class="write-info" rows="3" cols="50" id="background-inputs"></textarea>
+                    <div class="alert-error" id="alert-background-error">
+                        <p class="didnt-write" id="background-error"> Preencha o campo acima </p>
+                    </div>
+                </div>
+                <div id="register-patient">
+                    <button id="register-button" onclick="updatePatient()">
+                        Atualizar paciente
+                    </button>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </main>
+    <script src="perfil.js"></script>
+    <script src="./Modal Edit/modal-edit.js"></script>
+</body>
+</html>

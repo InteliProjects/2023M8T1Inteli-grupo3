@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Consultas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="tarefas.css" />
+  </head>
+  <body>
+    <header>
+      <div class="user-icon">
+        <i class="fa-solid fa-circle-user"></i>
+      </div>
+    </header>
+    <main>
+      <div id="feedback"></div>
+      <div id="menu-lateral">
+        <div id="dados-usario-menu">
+          <div id="image-profile">
+            <input type="file" name="" id="file" accept="image/jpeg, image/png">
+            <svg id="placeholder-img" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+            </svg>
+            <svg id="trash" onclick="deleteImg()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+              <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+          </svg>
+          </div>
+          <p id="name"></p>
+        </div>
+        <div id="btn-tarefas" class="btn-menu">
+          <a href="tarefas.html"
+            ><i class="fa-solid fa-list-check"></i
+            ><span>&nbsp;&nbsp;Tarefas</span></a
+          >
+        </div>
+        <div id="btn-perfil" class="btn-menu active">
+          <a href="Perfil/perfil.html"
+            ><i class="fa-regular fa-circle-user"></i
+            ><span>&nbsp;&nbsp;Perfil</span></a
+          >
+        </div>
+        <div id="btn-desempenho" class="btn-menu">
+          <a href="../Home/home.html">
+            <i class="fa-solid fa-house"></i>
+            <span>&nbsp;&nbsp;Voltar</span></a>
+        </div>
+      </div>
+      <div id="conteudo-tarefa">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Crie uma tarefa</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <input id="task-name" type="text" placeholder="digite o nome da tarefa">
+                      <div id="btn">
+                        <button id="btn-confirm" onclick="sendTask()">Criar</button>
+                      </div>
+                  </div>            
+                </div>
+                </div>
+            </div>
+          </div>
+        <div id="cards">
+          <div class="card-dashed">
+            <p><i id = "btn-adicionar-tarefa" class="fa-solid fa-plus adicionar" onclick="createTask()"></i></p>
+            <p>Adicione uma nova tarefa</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="tarefas.js"></script>
+</body>
+</html>

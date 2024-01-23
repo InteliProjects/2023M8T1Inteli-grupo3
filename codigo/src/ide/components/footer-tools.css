@@ -1,0 +1,8 @@
+/* Styles for the blocks container */
+#blocks-box {
+    width: 100%;
+    position: fixed;
+    height: 250px;
+    background-color: #2B7F7F;
+    bottom: 0;
+}

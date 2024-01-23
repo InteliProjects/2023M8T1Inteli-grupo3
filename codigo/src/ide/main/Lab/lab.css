@@ -1,0 +1,1123 @@
+
+@import "../../components/nav.css";
+@import "../../components/footer-tools.css";
+
+body {
+    margin: 0;
+    display: flex;
+}
+
+h1 {
+    margin: 0;
+}
+
+#header-box {
+    display: flex;
+    flex-direction: column;
+}
+
+#title-box, #tools-box {
+    display: flex;
+    height: 30px;
+    width: 100%;
+}
+
+#title-box {
+    background-color: #2B7F7F;
+    padding-left: 10px;
+}
+
+#all-tools-box {
+    display: flex;
+    flex-direction: row;
+}
+
+#tools-box {
+    background-color: #15ACAC;
+    justify-content: space-between;
+}
+
+#button-tools {
+    border-radius: 0%;
+    border-style: none;
+    width: 100%;
+    height: 100%;
+    background-color: #15ACAC;
+    display: flex;
+    justify-content: center;
+    transform: transform 0.3s ease;
+    cursor: pointer;
+}
+
+
+#button-tools:active {
+    background-color: #2B7F7F;
+}
+
+
+#easer {
+    align-self: center;
+    margin-left: -70px;
+    width: 28px;
+}
+
+#back {
+    align-self: center;
+    margin-left: -25px;
+    width: 28px;
+}
+#sound{
+    align-self: center;
+    margin-left: 2px;
+    width: 28px;
+}
+
+#numbers{
+    align-self: center;
+    margin-left: -15px;
+    width: 32px;
+}
+
+#alphabet{
+    align-self: center;
+    margin-left: -15px;
+    width: 32px;
+}
+
+#colors{
+    align-self: center;
+    margin-left: -5px;
+    width: 32px;
+}
+
+#space-tools-box {
+    display: flex;
+    width: 50px;
+    height: 30px;
+}
+
+#title-content {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Abel', cursive;
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    border-color: none;
+    border-width: 0;
+}
+#title-content::placeholder {
+    color: white;
+}
+
+#title-content:focus {
+    border: 2px solid white;
+    outline: none;
+}
+
+#buttons-text-box {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    gap: 30px;
+}
+
+#error-text-box, #success-text-box{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    display: inline-block;
+}
+
+#blocks-box {
+    display: flex;
+}
+
+.block-box, #block-end-box {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    cursor: pointer;
+    transform: transform 0.3s ease;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+.block-box {
+    position: relative;
+}
+
+.block-box span {
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    padding: 1px 6px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    border: 1px solid #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.block-modal {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+    top: 240px;
+    width: 420px;
+    height: 100px;
+}
+
+#number-block-content {
+    height: 100%;
+    outline: none;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+#letter-block-content {
+    height: 100%;
+    outline: none;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.block-box-disabled {
+    opacity: 0.3;
+}
+
+#sequence-box .block-style {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+#sequence-box .block-style-black-box {
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+}
+
+.block-box:hover {
+    transform: scale(1.6);
+}
+
+#block-start-box {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+#main-box {
+    display: flex;
+    margin-top: 60px;
+    width: 100%;
+    height: 70vh;
+    padding-left: 100px;
+    padding-top: 100px;
+    padding-right: 100px;
+}
+
+#block-start-box {
+    width: 60px;
+    height: 60px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-around;
+}
+
+#start-component {
+    align-self: center;
+}
+
+.column-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#blocks-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+ #title-confirm, #title-feedback-correct, #title-feedback-wrong{
+    border-radius: 0;
+    border-style: none;
+    background-color: #15ACAC;
+    color: white;
+    font-family: 'Abel', cursive;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+
+}
+
+#backtoprofile{
+    border-radius: 0;
+    border-style: none;
+    background-color: #15ACAC;
+    color: white;
+    font-family: 'Abel', cursive;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    margin-left: -180px;
+}
+
+#title-confirm:hover, #title-feedback-correct:hover, #title-feedback-wrong:hover, #backtoprofile:hover {
+    background-color: #2B7F7F;
+    transform: scale(1.4);
+}
+
+#sequence-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    align-content: flex-start;
+    overflow: hidden;
+}
+
+#soundModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#soundModal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#soundModal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.861);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: none;
+}
+
+/* .modal{
+    height: 50vh;
+    width: 50vw;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 20vh;
+} */
+
+.modal-open{
+    overflow:hidden
+}
+#exampleModal .modal-title {
+    font-size: 20px; 
+    margin-left: 425px;
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    display: none;
+    outline: 0;
+  }
+  
+  .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .modal-dialog {
+  position: relative;
+  width: auto;
+  max-width: 80%; 
+  height: 500px; 
+  margin: auto;
+  pointer-events: none;
+  margin-top: 150px;
+}
+  
+  .modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out, height 2.8s ease-out;
+    transform: translate(0, -25%);
+  }
+  
+  .modal.show .modal-dialog {
+    transform: translate(0, 0);
+    height: 80vh !important;
+  }
+  
+  .modal-dialog-centered {
+    min-height: calc(100% - (0.5rem * 2));
+  }
+  
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #000;
+    border-radius: 0.3rem;
+    outline: 0;
+    height: 500px;
+  }
+  
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+  }
+  
+  .modal-backdrop.fade {
+    opacity: 0;
+  }
+  
+  .modal-backdrop.show {
+    opacity: 0.5;
+  }
+
+  
+  .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+  }
+
+  #exampleModal .modal-header .close {
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+    background-color: transparent; 
+    border: none; 
+    font-size: 30px;
+}
+
+  
+  .modal-header .close {
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+  }
+  
+  .modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    margin-left: 450px;
+  }
+  
+  .modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+  
+  .modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .modal-footer > :not(:first-child) {
+    margin-left: 0.25rem;
+  }
+  
+  .modal-footer > :not(:last-child) {
+    margin-right: 0.25rem;
+  }
+  
+  .modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+  }
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 1px 6px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+  
+.img-btn{
+    border: none;
+    background-color: transparent;
+}
+
+.img-btn:hover{
+    cursor: pointer;
+
+}
+
+.image-container{
+    margin-left: 20px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.recordButton,
+.historicButton {
+    background-color: #2B7F7F;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 100px;
+    width: 200px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.recordButton:hover,
+.historicButton:hover {
+    background-color: #155555;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+#initial-record {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+}
+
+#record-screen {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#record-mic {
+    width: 10%;
+    height: 35%;
+}
+
+#record-screen button {
+    border: none;
+    background-color: #FFFFFF;
+}
+
+#start-record:hover {
+    cursor: pointer;
+}
+
+#recording-screen {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#line {
+    background-color: #000000;
+    width: 80%;
+    height: 2.5px;
+}
+
+#recording {
+    width: 100%;
+    height: 30%;
+    gap: 3%;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
+
+#recording-button {
+    border-style: none;
+    border-radius: 15px;
+    background-color: #2B7F7F;
+    color: #FFFFFF;
+    width: 15%;
+    height: 25%;
+}
+
+#recording-button:hover {
+    background-color: #155555;
+    cursor: pointer;
+}
+
+#records-list {
+    width: 100%;
+    max-height: 355px;
+    overflow-y: scroll;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#record-item {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 66.6px;
+    border-radius: 15px;
+    background-color: #2B7F7F;
+    padding-left: 2.5%;
+    padding-top: 0.75%;
+    gap: 5px;
+    color: #FFFFFF;
+}
+
+#record-item:hover {
+    cursor: pointer;
+}
+
+#record-item-title {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    color: #FFFFFF;
+    gap: 10px;
+}
+
+#record-item-butons {
+    display: none;
+    gap: 10px;
+    height: 17.5%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#record-item-button {
+    border-style: none;
+    border-radius: 15px;
+    width: 30.75%;
+    background-color: #D9D9D9;
+    color: #000000;
+}
+
+#record-item-button:hover {
+    cursor: pointer;
+}
+
+.importButton {
+    margin-top: 10px;
+}
+
+#importRecording {
+    border: none;
+    background-color: #2B7F7F;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+}
+
+#importRecording:hover {
+    background-color: #155555;
+}
+
+/* Estilos para o modal da ovelha */
+.sheep-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1050;
+}
+
+.sheep-modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    height: 550px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sheep-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+.sheep-modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    margin-left: 135px;
+    margin-top: -50px;
+}
+
+.sheep-close {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+    margin-top: -40px;
+    margin-left: 450px;
+}
+
+.sheep-modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+/* Adicione mais estilos conforme necessário para o modal da ovelha */
+
+/* Estilos para animação de fade */
+.sheep-modal.fade {
+    transition: opacity 0.3s ease;
+}
+
+.sheep-modal.show {
+    opacity: 1;
+}
+
+
+#sheep:hover + .description_sheep{
+    display: block;
+}
+
+.description_sound{
+    position: absolute;
+    background-color: #2B7F7F;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1;
+}
+
+#sound:hover + .description_sound{
+    display: block;
+}
+
+.description_easer{
+    position: absolute;
+    background-color: #2B7F7F;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1;
+}
+
+#easer:hover + .description_easer{
+    display: block;
+}
+.description_mouse{
+    position: absolute;
+    background-color: #2B7F7F;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1;
+}
+
+#mouse:hover + .description_mouse{
+    display: block;
+}
+
+
+/* ... Outros estilos ... */
+
+/* Estilos para os retângulos */
+.rectangle{
+    width: 400px;
+    height: 60px;
+    background-color: #D9D9D9;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.rectangle:hover{
+    background-color: #D9D9D9;
+    transform: scale(1.08);
+}
+
+.rectangle p {
+    color: black; /* Cor do texto */
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px; /* Tamanho da fonte */
+    margin-top: -50px; /* Remover margens padrão do parágrafo */
+    padding: 15px; /* Adicionar preenchimento ao redor do texto */
+}
+
+.rectangle img {
+    object-fit: cover; 
+    margin-left: 315px;
+}
+
+#feedbackModal {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    background-color: #B2A9A9;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 7px;
+    gap: 10px;
+    top: 30%;
+    left: 90%;
+    width: 200px;
+}
+
+#feedback-title {
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Abel', cursive;
+}
+
+.feedback-options {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 1px;
+    width: 150px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Abel', cursive;
+    cursor: pointer;
+}
+
+/* Estilo para o modal dos números */
+.number-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+.number-modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.number-modal-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+    margin-left: 4px;
+}
+
+.number-close {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    padding: 1rem;
+    margin: -1rem -1rem -1rem 8rem;
+    margin-top: -20px;
+
+}
+
+.number-modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    margin-left: -100px;
+    margin-top: -15px;
+
+}
+.number-modal-body {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
+}
+
+.number-modal-body .circle-container.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px; /* Ajuste conforme necessário */
+    height: 90px; /* Ajuste conforme necessário */
+    border-radius: 50%;
+    border: #000 2px solid; /* Cor e espessura da borda da bolinha */
+    margin: 20px; /* Espaçamento entre as bolinhas */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.number-modal-body .circle-container.circle:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    border: #000 2.2px solid; /* Cor e espessura da borda da bolinha */
+}
+
+.number-modal-body .circle-container.circle p {
+    margin: 0;
+    font-size: 40px; /* Tamanho da fonte do número */
+    font-weight: bold;
+    color: #000; /* Cor do número */
+    font-family: Arial;
+}
+
+
+
+/* Estilos para o modal do alfabeto */
+.alphabet-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1050;
+}
+
+.alphabet-modal-dialog {
+    margin: 10% auto;
+    padding: 20px;
+    width: 505px;
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    border-radius: 25px; /* Ajuste o valor conforme necessário para arredondar mais ou menos */
+    transform: translate(-50%,-50%);
+   
+}
+.alphabet-close{
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    padding: 1rem;
+    margin: -1rem -1rem -1rem 9.5rem;
+    top: -50px;
+}
+
+.alphabet-modal-header {
+    padding: 10px;
+    margin-left: 280px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alphabet-modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.alphabet-item {
+    text-align: center;
+    position: relative;
+}
+
+.alphabet-img {
+    width: 50px; 
+    height: auto;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Adiciona uma transição suave para uma animação mais agradável */
+    border: 2px solid transparent; /* Adiciona uma borda transparente inicialmente */
+}
+
+.alphabet-img:hover {
+    transform: scale(1.5); /* Aumenta o tamanho em 20% durante o hover */
+    cursor: pointer;
+    border: 2.5px solid black; /* Adiciona uma borda preta durante o hover */
+}
+
+
+.letter-circle {
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+    border-radius: 50%;
+    z-index: 1; /* Para que as bolinhas fiquem atrás dos números */
+}
+
+.alphabet-item img {
+    position: relative;
+    z-index: 2; 
+    width: 40px; /
+}
+
+.alphabet-item:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+
+}
+
+.color-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+.color-modal-dialog {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 600px;
+    height: 520px;
+}
+
+.color-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.color-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.color-modal-header h1 {
+    font-size: 24px;
+}
+
+.color-close {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.color-modal-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.color-img{
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Adiciona uma transição suave para uma animação mais agradável */
+    border: 2px solid transparent; /* Adiciona uma borda transparente inicialmente */
+    border-radius: 50%;
+}
+
+.color-img:hover {
+    transform: scale(1.2); /* Aumenta o tamanho em 20% durante o hover */
+    border: 2px solid black; /* Adiciona uma borda preta durante o hover */
+    cursor: pointer;
+}
+.letter{
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    font-family: Arial;
+    margin: 0;
+}
